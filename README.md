@@ -7,9 +7,9 @@ Open your web browser and type "localhost:3000" to access the site, or it may au
 Explore the site# md.
 
 
-Tech Stack-- Html
-CSS
-JavaScript
-RectJs
-Tailwind Css
-Chakra-Ui
+Tech Stack-- Html,
+CSS,
+JavaScript,
+RectJs,
+Tailwind Css,
+Chakra-Ui,
