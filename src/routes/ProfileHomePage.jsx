@@ -2,23 +2,24 @@ import React, { useState, useEffect } from 'react'; // import React, useState an
 import { useParams } from 'react-router-dom'; // import useParams from react-router-dom
 import axios from 'axios'; // import axios library for making API requests
 import Navbar from "../Components/Navbar" // import Navbar component
-import SideNavbar from '../Components/SideNavbar'; // import SideNavbar component
+// import SideNavbar from '../Components/SideNavbar'; // import SideNavbar component
 import Chat from '../Components/ChatPage'; // import Chat component
 
 const ProfileHomePage = () => { // create a functional component named ProfileHomePage
   const { userId } = useParams(); // use the useParams hook to get the userId parameter from the URL
   const [user, setUser] = useState(null); // declare a state variable called user and initialize it to null using useState hook
 
+  
   useEffect(() => { // use the useEffect hook to perform side effects in the component
     const fetchUser = async () => { // declare an async function named fetchUser
-      const res = await axios.get(`https://drab-blue-shark-robe.cyclic.app/users/${userId}`); // make a GET request to the API endpoint with the userId parameter and store the response in a variable called res
-      setUser(res.data); // update the user state variable with the data from the API response
+      const res = await axios.get(`https://panorbit.in/api/users.json`); // make a GET request to the API endpoint with the userId parameter and store the response in a variable called res
+      const id = userId - 1;
+      setUser(res.data.users[id]); // update the user state variable with the data from the API response
     };
     fetchUser(); // call the fetchUser function
   }, [userId]); // run the effect only when the userId parameter changes
 
   localStorage.setItem("userData", JSON.stringify(user)) // store the user data in the localStorage with the key "userData"
-  // console.log("data" , user);
   const dataArr = JSON.parse(localStorage.getItem("userData")) // retrieve the user data from localStorage and parse it as JSON
 
   return (  // render the component UI
@@ -26,7 +27,7 @@ const ProfileHomePage = () => { // create a functional component named ProfileHo
       <div >
         <div className=' flex '>
           <div className=' w-[24%]'>
-            <SideNavbar />
+            {/* <SideNavbar /> */}
           </div>
           {dataArr && (<div className='py-12 px-8 w-[76%]'>
             <Navbar />

@@ -30,13 +30,13 @@ const LandingPage = () => {
         {/* Account Selection Header */}
         <div className=" bg-gray-100 rounded-t-[2.8rem]">
           <h1 className="text-xl text-zinc-600 font-semibold p-8 text-center">
-            Select User Account
+            Select an account
           </h1>
         </div>
 
         {/* Account Selection List */}
         {/* Otherwise, render the list of users */}
-            (<div className="bg-white rounded-b-[2.8rem]">
+            <div className="bg-white rounded-b-[2.8rem]">
               <div className="p-8 overflow-y-auto h-[28rem] scrollbar-thin">
                 {/* Check if there are any users in the list before mapping */}
                 {users?.length > 0 && // Use optional chaining to prevent errors if users is null or undefined
@@ -60,7 +60,7 @@ const LandingPage = () => {
                     </li>
                   ))}
               </div>
-            </div>)
+            </div>
       </div>
     </div>
   );
