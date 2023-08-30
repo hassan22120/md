@@ -10,7 +10,7 @@ const SideNavbar = () => {
   const activeLink = useLocation();
   // Retrieve the user data from local storage and parse it into an array
   const dataArr = JSON.parse(localStorage.getItem("userData"));
- 
+ console.log("dataArr",dataArr);
   // Define a helper function to generate the indicator element for the active link
   const getIndicator = (path, color, marginTop) => {
     // If the current path matches the given path, render the indicator

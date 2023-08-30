@@ -4,8 +4,7 @@ import React, { createContext, useEffect, useState } from 'react'
 
 // Create a userContext object
 export const userContext = createContext();
-// Get user data from local storage
-const dataArr = JSON.parse(localStorage.getItem("userData"))
+
 
 // Create a UserProvider component
 const UserProvider = ({ children }) => {
@@ -31,7 +30,7 @@ getData();
 
 // Pass users state, getData function and user data from local storage state as values to userContext provider
 return (
-<userContext.Provider value={{ users, getData, dataArr }}>
+<userContext.Provider value={{ users, getData }}>
 {children}
 </userContext.Provider>
 )
