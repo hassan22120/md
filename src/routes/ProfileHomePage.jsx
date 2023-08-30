@@ -23,7 +23,7 @@ const ProfileHomePage = () => { // create a functional component named ProfileHo
 
   localStorage.setItem("userData", JSON.stringify(user));// store the user data in the localStorage with the key "userData"
   const dataArr = JSON.parse(localStorage.getItem("userData")) // retrieve the user data from localStorage and parse it as JSON
-  console.log("dataArr11",dataArr,user);
+  
   return (  // render the component UI
     <>
       <div >
