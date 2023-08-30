@@ -6,6 +6,7 @@ import { RiArrowDropRightLine } from "react-icons/ri";
 
 // Define a functional component called SideNavbar
 const SideNavbar = () => {
+
   // Use the useLocation hook to get the current active link
   const activeLink = useLocation();
   // Retrieve the user data from local storage and parse it into an array
@@ -39,7 +40,7 @@ const SideNavbar = () => {
       <div className="bg-gradient-to-b from-indigo-500 to-purple-800 p-8 h-[45rem] rounded-3xl">
         <div className="text-left py-44 leading-[4rem] font-semibold">
           <ul>
-            {/* Render the profile link with the appropriate text color */}
+             {/*Render the profile link with the appropriate text color*/}
             <li>
               <Link
                 to={`/profile/${dataArr.id}`}
